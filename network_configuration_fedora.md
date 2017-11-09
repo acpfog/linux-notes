@@ -22,6 +22,6 @@ nameserver 192.168.0.1
 
 Apply changes
 
-```bash
+```{r, engine='bash', count_lines}
 $ sudo systemctl restart network
 ```
