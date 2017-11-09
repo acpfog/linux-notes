@@ -16,7 +16,7 @@ GATEWAY=192.168.0.1
 
 Append a line with the DNS server IP address to `/etc/resolv.conf`
 
-```console
+```text
 nameserver 192.168.0.1
 ```
 
