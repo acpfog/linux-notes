@@ -16,12 +16,12 @@ GATEWAY=192.168.0.1
 
 Append a line with the DNS server IP address to `/etc/resolv.conf`
 
-```text
+```console
 nameserver 192.168.0.1
 ```
 
 Apply changes
 
-```{r, engine='bash', count_lines}
+```bash
 $ sudo systemctl restart network
 ```
