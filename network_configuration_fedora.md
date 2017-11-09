@@ -1,7 +1,7 @@
 
 #### Manual network configuration in Fedora for enp0s3 network interface  
 
-In `/etc/sysconfig/network-scripts/ifcfg-enp0s3` set an IP address and netmask
+Set an IP address and netmask in `/etc/sysconfig/network-scripts/ifcfg-enp0s3`
 
 ```text
 IPADDR=192.168.0.2
@@ -22,6 +22,6 @@ nameserver 192.168.0.1
 
 Apply changes
 
-```bash
+```shell
 $ sudo systemctl restart network
 ```
