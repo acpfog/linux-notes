@@ -3,7 +3,7 @@
 
 In `/etc/sysconfig/network-scripts/ifcfg-enp0s3` set an IP address and netmask
 
-```console
+```text
 IPADDR=192.168.0.2
 NETMASK=255.255.255.0
 ```
