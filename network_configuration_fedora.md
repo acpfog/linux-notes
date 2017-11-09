@@ -1,5 +1,10 @@
 
+# Manual network configuration in Fedora for enp0s3 network interface  
+## Manual network configuration in Fedora for enp0s3 network interface  
+### Manual network configuration in Fedora for enp0s3 network interface  
 #### Manual network configuration in Fedora for enp0s3 network interface  
+##### Manual network configuration in Fedora for enp0s3 network interface  
+###### Manual network configuration in Fedora for enp0s3 network interface  
 
 Set an IP address and netmask in `/etc/sysconfig/network-scripts/ifcfg-enp0s3`
 
