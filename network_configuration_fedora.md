@@ -14,7 +14,7 @@ Put a line with the default gateway IP address to `/etc/sysconfig/network`
 GATEWAY=192.168.0.1
 ```
 
-Append a line with a DNS server address to `/etc/resolv.conf`
+Append a line with the DNS server IP address to `/etc/resolv.conf`
 
 ```console
 nameserver 192.168.0.1
