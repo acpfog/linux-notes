@@ -10,18 +10,18 @@ NETMASK=255.255.255.0
 
 Put a line with the default gateway IP address to `/etc/sysconfig/network`
 
-```console
+```text
 GATEWAY=192.168.0.1
 ```
 
 Append a line with the DNS server IP address to `/etc/resolv.conf`
 
-```console
+```text
 nameserver 192.168.0.1
 ```
 
 Apply changes
 
-```bash
+```console
 # systemctl restart network
 ```
