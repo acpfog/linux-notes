@@ -2,7 +2,7 @@
 ## How to manually configure a network interface in Fedora
 
 Set an IP address and netmask in `/etc/sysconfig/network-scripts/ifcfg-enp0s3`  
-(replace `enp0s3` if you have another name of a network interface)
+(replace `enp0s3` if your network interface has another name)
 
 ```text
 IPADDR=192.168.0.2
