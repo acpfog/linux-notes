@@ -79,7 +79,7 @@ files is the Directory Manager password
 # firewall-cmd --reload
 ```
 
-### Disabling anonymous binds
+### Turn off anonymous binds
 
 By default FreeIPA server allows anonymous requests to the Directory Server.  
 To prevent a leak of critical information turn it off.
@@ -125,7 +125,7 @@ Change the default shell
 
 ### Management through Web UI
 
-Open the link `https://freeipa.company.local/` in your browser. Log in with the user "admin" and the password you set by -a option. You can add a new account with login "username".
+Open the link `https://freeipa.company.local/` in your browser. Log in with the user "admin" and the password you set by -a option. You can add a new account with login "username" for instance.
 
 ### Make requests to the LDAP server
 
