@@ -10,7 +10,7 @@ Choose Base Environment - "Fedora Custom Operating System -> Standard".
 If your server uses some local hostname add it to `/etc/hosts`.  
 Set a locale and language settings:
 
-```bash
+```console
 # cat <<'EOF' > /etc/environment
 LANG=en_US.utf-8
 LC_ALL=en_US.utf-8
@@ -19,13 +19,13 @@ EOF
 
 ### Install FreeIPA server and related packages
 
-```bash
+```console
 # dnf -y install freeipa-server
 ```
 
 ### Configure FreeIPA server
 
-```bash
+```console
 # ipa-server-install --no-ntp --no_hbac_allow --idstart=33000 --idmax=45000 --hostname=freeipa.company.local -n company.local -r COMPANY.LOCAL -p passwd1 -a passwd2 -U
 ```
 
@@ -74,7 +74,7 @@ files is the Directory Manager password
 
 ### Allow access to the FreeIPA services
 
-```bash
+```console
 # firewall-cmd --permanent --add-service={http,https,ldap,ldaps,kerberos,kpasswd}
 # firewall-cmd --reload
 ```
@@ -84,59 +84,59 @@ files is the Directory Manager password
 By default FreeIPA server allows anonymous requests to the Directory Server.  
 To prevent a leak of critical information turn it off.
 
-```bash
-# ldapmodify -D "cn=directory manager" -W -h freeipa.company.local
-```
-
-Enter the password you set by -p option.
-Then enter lines below and enter two times.
-
 ```console
+# cat <<'EOF' > /tmp/anonoff.ldif
 dn: cn=config
 changetype: modify
 replace: nsslapd-allow-anonymous-access
 nsslapd-allow-anonymous-access: off
+EOF
 ```
 
-Restart Directory Server after configuration changes.
+Change the LDAP server configuration.
 
-```bash
+```console
+# ldapmodify -D "cn=directory manager" -w passwd1 -h freeipa.company.local -f /tmp/anonoff.ldif
+```
+
+Restart the Directory Server after configuration changes.
+
+```console
 # systemctl restart dirsrv.target
 ```
 
 ### Management through CLI
 
-Get Kerberos tickets ( with the password you set by -a option )
-```bash
+Get a Kerberos ticket ( with the password you set by -a option )
+```console
 # kinit admin
 # klist
 ```
 
-Get info about admin
-```bash
+Get info about the admin user
+```console
 # ipa user-find admin
 ```
 
 Change the default shell
-```bash
-# ipa config-mod --defaultshell=/bin/bash
+```console
+# ipa config-mod --defaultshell=/bin/console
 ```
 
 ### Management through Web UI
 
-Open in your browser the link `https://freeipa.company.local/` and log in with user "admin" and the password you set by -a option.  
-You can add a new account with login "username".
+Open in your browser the link `https://freeipa.company.local/` and log in with the user "admin" and the password you set by -a option. You can add a new account with login "username".
 
 ### Check requests to the LDAP server
 
 Get information about the new user using the Directory Manager account
 
-```bash
+```console
 # ldapsearch -h freeipa.company.local -x -b "uid=username,cn=users,cn=compat,dc=contactis,dc=local" -D "cn=directory manager" -w passwd1
 ```
 
 Get information about the new user using the Admin account
 
-```bash
+```console
 # ldapsearch -h freeipa.company.local -x -b "uid=username,cn=users,cn=compat,dc=contactis,dc=local" -D "uid=admin,cn=users,cn=compat,dc=contactis,dc=local" -w passwd2
 ```
