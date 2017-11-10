@@ -6,8 +6,8 @@ FreeIPA is supported by RedHat and works fine with Fedora.
 
 ### Install Fedora Server and make a minimal configuration
 
-Choose Base Environment - "Fedora Custom Operating System -> Standard".
-If your server uses some local hostname add it to `/etc/hosts`.
+Choose Base Environment - "Fedora Custom Operating System -> Standard".  
+If your server uses some local hostname add it to `/etc/hosts`.  
 Set a locale and language settings:
 
 ```console
