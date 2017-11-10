@@ -23,6 +23,6 @@ nameserver 192.168.0.1
 
 Apply changes
 
-```bash
+```console
 $ sudo systemctl restart network
 ```
