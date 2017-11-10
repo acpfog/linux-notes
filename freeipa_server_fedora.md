@@ -10,7 +10,7 @@ Choose Base Environment - "Fedora Custom Operating System -> Standard".
 If your server uses some local hostname add it to `/etc/hosts`.  
 Set a locale and language settings:
 
-```console
+```bash
 # cat <<'EOF' > /etc/environment
 LANG=en_US.utf-8
 LC_ALL=en_US.utf-8
@@ -19,13 +19,13 @@ EOF
 
 ### Install FreeIPA server and related packages
 
-```console
+```bash
 # dnf -y install freeipa-server
 ```
 
 ### Configure FreeIPA server
 
-```console
+```bash
 # ipa-server-install --no-ntp --no_hbac_allow --idstart=33000 --idmax=45000 --hostname=freeipa.company.local -n company.local -r COMPANY.LOCAL -p passwd1 -a passwd2 -U
 ```
 
@@ -81,7 +81,7 @@ files is the Directory Manager password
 
 ### Disabling anonymous binds
 
-By default FreeIPA server allows anonymous requests to the Directory Server.
+By default FreeIPA server allows anonymous requests to the Directory Server.  
 To prevent a leak of critical information turn it off.
 
 ```bash
@@ -124,7 +124,7 @@ Change the default shell
 
 ### Management through Web UI
 
-Open in your browser the link `https://freeipa.company.local/` and log in with user "admin" and the password you set by -a option.
+Open in your browser the link `https://freeipa.company.local/` and log in with user "admin" and the password you set by -a option.  
 You can add a new account with login "username".
 
 ### Check requests to the LDAP server
