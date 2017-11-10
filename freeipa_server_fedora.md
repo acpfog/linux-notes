@@ -125,9 +125,9 @@ Change the default shell
 
 ### Management through Web UI
 
-Open in your browser the link `https://freeipa.company.local/` and log in with the user "admin" and the password you set by -a option. You can add a new account with login "username".
+Open the link `https://freeipa.company.local/` in your browser. Log in with the user "admin" and the password you set by -a option. You can add a new account with login "username".
 
-### Check requests to the LDAP server
+### Make requests to the LDAP server
 
 Get information about the new user using the Directory Manager account
 
