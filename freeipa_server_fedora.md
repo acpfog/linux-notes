@@ -44,9 +44,9 @@ A description of the options:
 -U              - an unattended installation that will never prompt for user input
 ```
 
-If you use not real domain name, it might gives you an error during KDC restart, but the error should not affect a configuration process.
+If you use a not real domain name, it might gives you an error during KDC restart, but the error should not affect a configuration process.
 
-Installation will be finished when you see lines:
+The configuration process will be finished when you see the lines:
 ```text
 ...
 ...
@@ -72,16 +72,16 @@ These files are required to create replicas. The password for these
 files is the Directory Manager password
 ```
 
-### Allow access to FreeIPA services
+### Allow access to the FreeIPA services
 
 ```bash
 # firewall-cmd --permanent --add-service={http,https,ldap,ldaps,kerberos,kpasswd}
 # firewall-cmd --reload
 ```
 
-### Disabling Anonymous Binds
+### Disabling anonymous binds
 
-By default FreeIPA server allows anonymous requests to Directory Server.
+By default FreeIPA server allows anonymous requests to the Directory Server.
 To prevent a leak of critical information turn it off.
 
 ```bash
