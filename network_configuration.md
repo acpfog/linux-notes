@@ -53,6 +53,23 @@ localnet    192.168.0.0
 
 Apply changes
 
+If you set an IP address first time, you just run
+
 ```console
-$ sudo ip addr flush dev ens3 && sudo systemctl restart networking.service
+$ sudo systemctl restart networking.service
 ```
+
+If the interface already has some IP address, delete it before restarting the network service
+
+```console
+$ sudo ip addr flush dev ens3
+$ sudo systemctl restart networking.service
+```
+
+Or use `ifdown` and `ifup` commands for apply changes
+
+```console
+$ sudo ifdown ens3
+$ sudo ifup ens3
+```
+
