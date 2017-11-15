@@ -170,6 +170,18 @@ Turn autostart on if you want to start you VM after reboot.
 
 ### Managing a VM from CLI
 
+Get a list of domains (virtual machines)
+
+```console
+# virsh list
+```
+
+Reboot a guest system
+
+```console
+# virsh reboot domainname
+```
+
 If you want to make and apply changes in VM's configuration file
 
 ```console
@@ -178,6 +190,14 @@ If you want to make and apply changes in VM's configuration file
 # virsh start domainname
 ```
 
-Make a backup of xml files from `/etc/libvirt/qemu`
+And in case of a force shutdown
+
+```console
+# virsh destroy domainname
+# virsh define xmlfile
+# virsh start domainname
+```
+
+Make a backup of xml files from `/etc/libvirt/qemu`.
 If you run `virsh undefine domainname` it deletes domainname's xml file!
 
