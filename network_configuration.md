@@ -83,10 +83,12 @@ But if the interface already has an IP address it may brings an error
 Failed to start Raise network interface
 ```
 
-Delete an assigned IP address before restarting the network service.
+and you will lost a connection to the host.  
+
+Delete an assigned IP address before restarting the network service.  
+Do it from a console or in the background as a script.  
 
 ```console
 $ sudo ip addr flush dev eth0
 $ sudo systemctl restart networking.service
 ```
-
