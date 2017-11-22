@@ -113,9 +113,19 @@ Get a Kerberos ticket ( with the password you set by -a option )
 # klist
 ```
 
-Get info about the admin user
+Get brief info about the admin user
 ```console
 # ipa user-find admin
+```
+
+Get detail info about the admin user
+```console
+# ipa user-find admin --all
+```
+
+or more detail
+```console
+# ipa user-show admin --all --raw
 ```
 
 Change the default shell
