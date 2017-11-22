@@ -39,7 +39,7 @@ iface eth0 inet static
     netmask 255.255.255.0
     gateway 192.168.0.1
     dns-nameservers 192.168.0.1
-    dns-search contactis.local
+    dns-search company.local
 ```
 
 Set networks addresses in `/etc/networks`
