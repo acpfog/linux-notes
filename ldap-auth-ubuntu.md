@@ -20,8 +20,8 @@ EOF
 ### Check an access to your LDAP server
 
 ```console
-# ldapsearch -h 192.168.0.2 -x -b "uid=admin,cn=users,cn=compat,dc=contactis,dc=local" -D "cn=directory manager" -W
-# ldapsearch -h 192.168.0.2 -x -b "uid=admin,cn=users,cn=compat,dc=contactis,dc=local" -D "uid=admin,cn=users,cn=compat,dc=contactis,dc=local" -W
+# ldapsearch -h 192.168.0.2 -x -b "uid=admin,cn=users,cn=compat,dc=company,dc=local" -D "cn=directory manager" -W
+# ldapsearch -h 192.168.0.2 -x -b "uid=admin,cn=users,cn=compat,dc=company,dc=local" -D "uid=admin,cn=users,cn=compat,dc=company,dc=local" -W
 ```
 
 The options meaning:
@@ -43,11 +43,11 @@ The options meaning:
 During the installation process you will be asked about some configuration parameters.  
 
 Enter the URI of the LDAP server to use ( for example `ldap://192.168.0.2` )  
-Enter the distinguished name of the LDAP search base ( for example `dc=contactis,dc=local` )  
+Enter the distinguished name of the LDAP search base ( for example `dc=company,dc=local` )  
 Set LDAP version to use: `3`  
 Make local root Database admin: `NO`  
 Does the LDAP database require login: `YES`  
-Unprivileged database user ( for example `uid=authsession,cn=users,cn=compat,dc=contactis,dc=local` )  
+Unprivileged database user ( for example `uid=authsession,cn=users,cn=compat,dc=company,dc=local` )  
 Enter a password for the user you set on the preview step.
 
 ### Set up /etc/nsswitch.conf to use ldap lookups
@@ -63,7 +63,7 @@ It will use a configuration from `/etc/auth-client-config/profile.d/ldap-auth-co
 To the file `/etc/ldap.conf` add a line:
 
 ```text
-nss_base_group          cn=groups,cn=compat,dc=contactis,dc=local
+nss_base_group          cn=groups,cn=compat,dc=company,dc=local
 ```
 
 ### Automatically create home folders
