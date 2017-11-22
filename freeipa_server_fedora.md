@@ -132,11 +132,11 @@ Open the link `https://freeipa.company.local/` in your browser. Log in with the 
 Get information about the new user using the Directory Manager account
 
 ```console
-# ldapsearch -h freeipa.company.local -x -b "uid=username,cn=users,cn=compat,dc=contactis,dc=local" -D "cn=directory manager" -w passwd1
+# ldapsearch -h freeipa.company.local -x -b "uid=username,cn=users,cn=compat,dc=company,dc=local" -D "cn=directory manager" -w passwd1
 ```
 
 Get information about the new user using the Admin account
 
 ```console
-# ldapsearch -h freeipa.company.local -x -b "uid=username,cn=users,cn=compat,dc=contactis,dc=local" -D "uid=admin,cn=users,cn=compat,dc=contactis,dc=local" -w passwd2
+# ldapsearch -h freeipa.company.local -x -b "uid=username,cn=users,cn=compat,dc=company,dc=local" -D "uid=admin,cn=users,cn=compat,dc=company,dc=local" -w passwd2
 ```
